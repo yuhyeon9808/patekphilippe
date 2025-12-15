@@ -31,7 +31,7 @@ export default function HeroShowcase() {
                 with a double aperture for the day and the month at 12 o’clock
                 and an analog date at 6 o’clock.
               </p>
-              <LinkBtn link="/bridges/grand/5270" />
+              <LinkBtn link="/5270" />
             </div>
           </div>
         </div>
