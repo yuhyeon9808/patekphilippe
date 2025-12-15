@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   title: 'PatekPhilippe',
   description: '파텍필립 웹사이트',
   icons: {
-    icon: './img/favicon.ico',
+    icon: '/img/favicon.ico',
   },
 };
 

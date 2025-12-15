@@ -1,7 +1,8 @@
 import { MENU } from '@/constant/menu';
 import { X } from 'lucide-react';
 import Link from 'next/link';
-import React, { Dispatch, SetStateAction } from 'react';
+import { usePathname } from 'next/navigation';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 
 export default function Nav({
   isOpen,
@@ -10,22 +11,34 @@ export default function Nav({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) {
+  const pathName = usePathname();
+
   return (
     <nav
-      className={`px-4 w-[320px] min-h-[100dvh] bg-background absolute top-0 z-20  transition-transform duration-400 ease-out ${
+      className={` px-4 w-[320px] min-h-dvh bg-background fixed top-0 z-20  transition-transform duration-400 ease-out ${
         isOpen ? 'translate-x-0' : 'translate-x-[-320px]'
       }`}
     >
-      <ul className="flex flex-col gap-10">
+      <ul className="flex flex-col gap-8">
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className="flex justify-end p-4 mt-3"
+          className="flex justify-end p-4 mt-10"
         >
           <X />
         </button>
         {MENU.map((item) => (
-          <li key={item.id} className="pl-3">
-            <Link href={item.href}>{item.menu}</Link>
+          <li
+            key={item.id}
+            className={`w-full pl-3 rounded-md hover:bg-foreground/30 py-3 ${
+              pathName === item.href ? 'bg-foreground/30' : ''
+            }`}
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+            }}
+          >
+            <Link href={item.href} className="block">
+              {item.menu}
+            </Link>
           </li>
         ))}
       </ul>
