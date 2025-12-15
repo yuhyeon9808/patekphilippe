@@ -41,7 +41,7 @@ export default function Bridges() {
   const BASE_URL =
     'https://lmizujqllfopzyzeurkc.supabase.co/storage/v1/object/public/watch/';
   return (
-    <div>
+    <div className="min-h-[445px]">
       <ul className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-20  md:mx-20 mx-10 md:my-20 my-10">
         {filtering?.map((item) => (
           <li key={item.id} className="flex flex-col items-center">

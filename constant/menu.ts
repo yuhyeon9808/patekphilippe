@@ -1,8 +1,9 @@
 export const MENU = [
   { id: 1, menu: 'BRIDGES', href: '/bridges' },
-  { id: 2, menu: 'THE HOUSE', href: '/house' },
-  { id: 3, menu: 'SERVICES', href: '/services' },
-  { id: 4, menu: 'SALONS', href: '/salons' },
+  { id: 2, menu: 'MAGAZINE', href: '/magazine' },
+  { id: 3, menu: 'THE HOUSE', href: '/house' },
+  { id: 4, menu: 'SERVICES', href: '/services' },
+  { id: 5, menu: 'SALONS', href: '/salons' },
 ];
 
 export const WATCH = [
