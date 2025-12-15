@@ -7,6 +7,7 @@ import {
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { Providers } from '@/lib/reactQuery/Providers';
 
 const playfair = Playfair_Display({
   variable: '--font-playfair',
@@ -42,8 +43,7 @@ export default function RootLayout({
         className={`${playfair.variable} ${openSans.variable} ${luxurious.variable} antialiased`}
       >
         <Header />
-
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>
