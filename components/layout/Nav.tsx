@@ -1,6 +1,7 @@
 import { MENU } from '@/constant/menu';
 import { X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { Dispatch, SetStateAction, useState } from 'react';
 
 export default function Nav({
@@ -10,10 +11,11 @@ export default function Nav({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) {
-  const [isSelected, setIsSelected] = useState<number>();
+  const pathName = usePathname();
+
   return (
     <nav
-      className={`px-4 w-[320px] min-h-dvh bg-background fixed top-0 z-20  transition-transform duration-400 ease-out ${
+      className={` px-4 w-[320px] min-h-dvh bg-background fixed top-0 z-20  transition-transform duration-400 ease-out ${
         isOpen ? 'translate-x-0' : 'translate-x-[-320px]'
       }`}
     >
@@ -28,9 +30,11 @@ export default function Nav({
           <li
             key={item.id}
             className={`w-full pl-3 rounded-md hover:bg-foreground/30 py-3 ${
-              isSelected === item.id ? 'bg-foreground/30' : ''
+              pathName === item.href ? 'bg-foreground/30' : ''
             }`}
-            onClick={() => setIsSelected(item.id)}
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+            }}
           >
             <Link href={item.href} className="block">
               {item.menu}
