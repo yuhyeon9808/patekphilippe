@@ -45,7 +45,7 @@ export default function Bridges() {
       <ul className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-20  md:mx-20 mx-10 md:my-20 my-10">
         {filtering?.map((item) => (
           <li key={item.id} className="flex flex-col items-center">
-            <Link href="/bridges/grand/5270">
+            <Link href="/bridges/grand/5270/1R-001">
               <Image
                 src={BASE_URL + item.img}
                 alt={item.productName}
